@@ -1,0 +1,261 @@
+body {
+  font-family: 'Arial';
+}
+
+.centered {
+  margin: auto;
+}
+
+#grid {
+  border-radius: 5px;
+  display: grid;
+  width: 500px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  height: 200px;
+  max-height: 200px;
+  background: white;
+  box-shadow: inset 0px 0px 5px 0px rgba(50,50,50,0.1), 0px 0px 2px 0px rgba(50,50,50,0.5);
+  
+}
+
+#grid:hover{
+ box-shadow: inset 0px 0px 5px 0px rgba(50,50,50,0.1), 0px 0px 4px 0px rgba(50,50,50,0.5);
+}
+#eventContainer{
+ display: inline-grid;
+ grid-template-rows: 0.5fr 2.5fr;
+ grid-gap: 2px;
+ padding:  10px 0px 0px 5px;
+ grid-column-start: 1;
+ grid-column-end: 2;
+ grid-row-start: 1;
+ grid-row-end: 3;
+}
+#timeContainer{
+ padding:  5px 5px 5px 5px;
+ display: inline-grid;
+ align-items: center;
+ align-content: center;
+ justify-items: left;
+ justify-content: center;
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ grid-template-rows: 1fr 1fr; 
+ grid-column-start: 1;
+ grid-column-end: 2;
+ grid-row-start: 3;
+ grid-row-end: 5;
+ height: 100%;
+}
+
+#setFor {
+ grid-column-start: 1;
+ grid-column-end: 2;
+ grid-row-start: 1;
+ grid-row-end: 2;
+}
+
+#time {
+ align-items: left;
+ grid-column-start: 2;
+ grid-column-end: 5;
+ grid-row-start: 1;
+ grid-row-end: 2;
+}
+#repeats {
+ grid-column-start: 1;
+ grid-column-end: 2;
+ grid-row-start: 2;
+ grid-row-end: 3;
+}
+#repeat {
+ grid-column-start: 2;
+ grid-column-end: 3;
+ grid-row-start: 2;
+ grid-row-end: 3;
+}
+#howOften{
+ grid-column-start: 3;
+ grid-column-end: 4;
+ grid-row-start: 2;
+ grid-row-end: 3;
+}
+#hrs{
+ grid-column-start: 4;
+ grid-column-end: 5;
+ grid-row-start: 2;
+ grid-row-end: 3;
+ margin-left: 0.5em;
+}
+
+#userContainer {
+ text-align: center;
+ display: inline-grid;
+ justify-items: center;
+ grid-template-columns: 1fr 1fr;
+ grid-template-rows: 1fr 1fr;
+ padding:  10px 15px 5px 5px;
+ grid-column-start: 2;
+ grid-column-end: 3;
+ grid-row-start: 1;
+ grid-row-end: 2;
+ max-height: 100%;
+}
+#users {
+  
+  width: 100%;
+  height: 80%;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2; 
+}
+
+#events {
+  
+}
+
+#recipientsContainer{
+ padding:  0px 0px 0px 10px;
+ min-width:0;
+ grid-column-start: 2;
+ grid-column-end: 3;
+ grid-row-start: 2;
+ grid-row-end: 4;
+ overflow-y: scroll;
+ box-shadow: inset 0px -5px 6px -9px rgba(0,0,0,0.5),inset 0px 5px 6px -9px rgba(0,0,0,0.5), inset 5px 0px 6px -9px rgba(0,0,0,0.5)
+}
+
+#alarmButton {
+ align-items: center;
+ justify-items: center;
+ display: inline-grid;
+ text-align: center;
+ grid-column-start: 2;
+ grid-column-end: 3;
+ grid-row-start: 4;
+ grid-row-end: 5;
+}
+
+select {
+  border:  1px solid white;
+  border-radius: 2px;
+  font-size: 16px;
+  
+}
+
+select:hover {
+ border-radius: 5px;
+ border: solid rgba(200,200,200,0.3) 1px;
+}
+
+.addUndo {
+  background-color: #f4f4f4;
+  border: 1px solid rgba(50,50,50,0.1);
+  border-radius: 10px;
+  color: black;
+  padding: 2px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 80%;
+}
+
+.addUndo:hover {
+ box-shadow: inset 0px 0px 1px 0px rgba(50,50,50,0.8)
+ }
+
+.addUndo:focus{
+ outline: none;
+}
+.addUndo:active{
+ background-color: yellow;
+}
+
+#addRecipient {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;  
+}
+
+
+#clearRecipients {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;  
+}
+
+.events {
+  width: 90%;
+  
+}
+
+textarea {
+  resize: none;
+}
+
+.activeAlarm {
+  margin-top: 20px;
+  display: grid;
+  height : 200px;
+  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  
+  border-radius: 5px;
+  display: grid;
+  width: 500px;
+  height: 200px;
+  max-height: 200px;
+  background: white;
+  box-shadow: inset 0px 0px 5px 0px rgba(50,50,50,0.1), 0px 0px 2px     0px rgba(50,50,50,0.5);
+}
+
+.alarmName{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  padding-left: 5px;
+}
+
+.remainingTime {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  padding-left: 5px;
+}
+
+.exitButton {
+ margin-left: auto;
+ margin-bottom: auto;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin-top: 2px;
+  margin-right: 2px;
+  background-color: #c04c36;
+  border-radius: 3px;
+  border: 1px;
+}
+.message {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  overflow-y: scroll;
+  padding-left: 5px;
+}
+
+.recipients {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  overflow-y: scroll;
+}
+
