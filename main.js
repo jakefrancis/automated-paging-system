@@ -82,7 +82,6 @@ let Alarm = function(event,message, hours, minutes,repeat,howOften,...recipients
     document.MYFORM.MSG.value = this.message;
     document.MYFORM.SUBJECT.value = this.recipients;
     document.MYFORM.FRM.value = frm;
-    console.log(document.MYFORM.MSG.value)
     document.MYFORM.submit();
   }
 }
@@ -185,21 +184,18 @@ let alarmParameters = {
       recipientsArr.push(document.getElementById('users').value)
       document.getElementById('recipients').textContent = 
         recipientsArr.join(', ')
-console.log(recipientsArr)
   },
-  
   removeRecipient: function(){
- recipientsArr.pop()
-  document.getElementById('recipients').textContent = recipientsArr.join(', ')
-},
-  addAlarm: function(){
-    
-  let events = document.getElementById('event');
-  let eventMessage = events.options[events.selectedIndex].text;
-  let message = document.getElementById('messages')
-  let time = document.getElementById('time').value.split('')
-  let hours= (function(){
-        let hours = null
+    recipientsArr.pop()
+    document.getElementById('recipients').textContent = recipientsArr.join(', ')
+  },
+  addAlarm: function(){    
+    let events = document.getElementById('event');
+    let eventMessage = events.options[events.selectedIndex].text;
+    let message = document.getElementById('messages')
+    let time = document.getElementById('time').value.split('')
+    let hours= (function(){
+    let hours = null
         if (time[0] == "0"){
           hours = time[1]
           return Number(hours)
@@ -220,18 +216,18 @@ console.log(recipientsArr)
           return Number(minutes)
         }
         
-  })();
-          
+  })();          
   let repeat = document.getElementById('repeat').checked;
   let howOften = document.getElementById('howOften').value;
-  let recipients = recipientsArr.join(',');   
-  
-    
-    
-    alarmHandler.createActiveAlarm(eventMessage,message.value, hours,minutes,repeat,howOften,recipients);            
-    alarmElements.refreshActiveAlarms();
-    alarmElements.drawActiveAlarms(activeAlarms);      
-                      }
+  if(recipientsArr.length === 0) {
+    window.alert('Add at least one recipient')
+    return
+  }
+  let recipients = recipientsArr.join(',');  
+  alarmHandler.createActiveAlarm(eventMessage,message.value, hours,minutes,repeat,howOften,recipients);            
+  alarmElements.refreshActiveAlarms();
+  alarmElements.drawActiveAlarms(activeAlarms);
+  }
   
 }
 
