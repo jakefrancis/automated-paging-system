@@ -91,15 +91,11 @@ const alarmHandler = (() => {
   const createActiveAlarm = (event,message,hours,minutes,repeat,howOften,sent,...recipients) =>{
     let alarm = new Alarm(event,message,hours,minutes,repeat,howOften,sent,...recipients)
      activeAlarms.push(alarm)
-    console.log(activeAlarms)
   }
    const deleteActiveAlarm = (uniqueID) => {
-      let index = deletionArray.indexOf(uniqueID);
-          console.log(uniqueID)
-          
+      let index = deletionArray.indexOf(uniqueID);          
           deletionArray.splice(index,1)
           activeAlarms.splice(index,1)
-          console.log(deletionArray)
    }
   return {
     createActiveAlarm,
