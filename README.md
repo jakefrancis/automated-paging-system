@@ -19,7 +19,7 @@ I created this system to help prevent myself and fellow chemistry staff from mis
 
 The site is not mobile friendly because it is intended only to be used on a desktop computer.
 
-I analyzed separate plant paging website was with chrome development tools to reverse engineer the form data needed to send messages to pagers
+I analyzed a separate plant paging website was with chrome development tools to reverse engineer the form data needed to send messages to pagers
 
 This version of the code prints to the developer console when an alarm is going off. 
 
